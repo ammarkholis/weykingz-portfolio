@@ -61,7 +61,7 @@
     <div><strong>5+</strong><span>Years in manufacturing IT</span></div>
     <div><strong>30%</strong><span>IT cost reduction</span></div>
     <div><strong>3</strong><span>Sites supported</span></div>
-    <div><strong>15+</strong><span>Projects delivered</span></div>
+    <div><strong>17+</strong><span>Projects delivered</span></div>
   </div>
 </section>
 
@@ -122,7 +122,7 @@
       </article>
     </div>
     <div class="chips">
-      <span>Zabbix</span><span>Grafana</span><span>Linux (Ubuntu)</span><span>MySQL / MariaDB</span><span>HTML · CSS · JavaScript</span><span>cPanel & WordPress</span><span>UniFi</span><span>Remote Desktop</span><span>Visual Studio</span>
+      <span>Zabbix</span><span>Grafana</span><span>ESP32 / IoT</span><span>MQTT</span><span>Node.js</span><span>Linux (Ubuntu)</span><span>MySQL / MariaDB</span><span>HTML · CSS · JavaScript</span><span>cPanel & WordPress</span><span>UniFi</span><span>Remote Desktop</span><span>Visual Studio</span>
     </div>
   </div>
 </section>
@@ -260,16 +260,22 @@
         <div class="stack"><span>Power Apps</span><span>SharePoint Lists</span></div>
       </article>
       <article class="card project" data-cat="monitoring automation">
-        <span class="tag">Industry 4.0</span>
-        <h3>Machine Monitoring Dashboard</h3>
-        <p>Real-time production dashboard: machine data streamed over MQTT, stored in a database and visualized for management decision-making.</p>
-        <div class="stack"><span>MQTT</span><span>Node.js</span><span>MariaDB</span><span>JavaScript</span></div>
+        <span class="tag">Industry 4.0 · IoT</span>
+        <h3>Real-Time Machine Monitoring</h3>
+        <p>Built for the maintenance team, who used to check machine status by hand. ESP32 devices read the power and process signals from each machine panel and publish every status change over MQTT. A Node.js subscriber stores the history, and a responsive dashboard shows live status, history logs and daily recaps on phones, laptops and the TV in the monitoring room. Telegram notifications go to the maintenance group.</p>
+        <div class="stack"><span>ESP32</span><span>MQTT (Mosquitto)</span><span>Node.js</span><span>MySQL</span><span>Telegram Bot</span></div>
       </article>
       <article class="card project" data-cat="monitoring">
-        <span class="tag">Monitoring</span>
-        <h3>NOC Monitoring & Alerting</h3>
-        <p>Centralized monitoring for servers and network devices with Grafana dashboards and Telegram alerts split by team, so issues are caught before users notice.</p>
-        <div class="stack"><span>Zabbix</span><span>Grafana</span><span>Telegram Bot</span><span>Linux</span></div>
+        <span class="tag">Network Monitoring</span>
+        <h3>Multi-Site ISP Monitoring</h3>
+        <p>Live bandwidth monitoring for every ISP link at each site, with real-time Telegram alerts when a link goes down and when it comes back. You can see exactly when an ISP failed and how long the outage lasted, which makes SLA follow-ups with providers much easier.</p>
+        <div class="stack"><span>Zabbix</span><span>Grafana</span><span>SNMP</span><span>Telegram Bot</span></div>
+      </article>
+      <article class="card project" data-cat="monitoring">
+        <span class="tag">NOC</span>
+        <h3>Server & VM Monitoring (NOC)</h3>
+        <p>A central NOC dashboard for physical Hyper-V hosts, the VMs on each host, and firewalls and routers across sites. Alerts go to separate server and network Telegram channels with severity filters to reduce noise. A read-only viewer role lets the team share dashboards safely.</p>
+        <div class="stack"><span>Zabbix 7</span><span>Grafana</span><span>Hyper-V</span><span>Palo Alto</span><span>MikroTik</span></div>
       </article>
       <article class="card project" data-cat="monitoring">
         <span class="tag">Infrastructure</span>
@@ -444,7 +450,7 @@
   const C = {
     help: () => 'Available commands:\n  whoami     who is this guy?\n  skills     tech stack\n  projects   list projects\n  cases      problems I have solved\n  certs      certifications\n  ping       check if I am online\n  uptime     years in IT\n  contact    get in touch\n  clear      clear the screen',
     whoami: () => 'Vikrie Ammar Kholis\nIT Systems & Infrastructure Specialist · Power Platform Developer\nSerang, Banten — Indonesia',
-    skills: () => 'infra      : Windows Server, AD/Entra ID, GPO, Hyper-V, Linux\nnetwork    : Palo Alto NGFW, MikroTik, UniFi, SD-WAN, IPsec\nm365       : Exchange Online, SharePoint, Teams, Intune\nautomation : Power Apps, Power Automate, Power BI\nmonitoring : Zabbix, Grafana, NUT, Telegram bots\ncode       : HTML/CSS/JS, Node.js, Python Flask, SQL',
+    skills: () => 'infra      : Windows Server, AD/Entra ID, GPO, Hyper-V, Linux\nnetwork    : Palo Alto NGFW, MikroTik, UniFi, SD-WAN, IPsec\nm365       : Exchange Online, SharePoint, Teams, Intune\nautomation : Power Apps, Power Automate, Power BI\nmonitoring : Zabbix, Grafana, NUT, Telegram bots\niot        : ESP32, MQTT, Node.js\ncode       : HTML/CSS/JS, Node.js, Python Flask, SQL',
     projects: () => [...document.querySelectorAll('#project-grid .project h3')].map((h, i) => `  ${String(i + 1).padStart(2, '0')}. ${h.textContent}`).join('\n') + '\n\n→ scroll up to #projects for details',
     cases: () => [...document.querySelectorAll('.case summary')].map(s => '  • ' + s.lastChild.textContent.trim()).join('\n'),
     certs: () => '2025  Palo Alto NGFW Configuration & Management\n2024  IT Infrastructure Monitoring Trends — APTIKNAS\n2024  Web Development — Udemy\n2023  ISO 9001 / 14001 / 45001 Awareness\n2022  Design Rally: Palo Alto Firewall Knowledge',
