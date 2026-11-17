@@ -8,7 +8,7 @@
   <meta property="og:title" content="Vikrie Ammar Kholis — IT Systems & Infrastructure">
   <meta property="og:description" content="IT Systems & Infrastructure Specialist · Microsoft 365 · Power Platform Developer">
   <meta property="og:url" content="https://weykingz.my.id">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232a3384'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23fff'>VA</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23161d78'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23fff'>VA</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -218,10 +218,16 @@
         <div class="stack"><span>Bash</span><span>Ubuntu</span><span>SSH</span><span>ufw</span></div>
       </article>
       <article class="card project" data-cat="infra">
-        <span class="tag">Backup</span>
-        <h3>Backup Server from a Spare Laptop</h3>
-        <p>Turned a retired laptop into an on-prem S3-compatible backup target for ERP SQL backups, with a roadmap to an immutable hardened repository for Hyper-V VMs.</p>
-        <div class="stack"><span>Garage S3</span><span>rclone</span><span>Ubuntu</span><span>Veeam (planned)</span></div>
+        <span class="tag">Disaster Recovery</span>
+        <h3>Building an On-Prem Backup & DR Platform</h3>
+        <p>Designed the company's backup and disaster-recovery setup for the ERP system after moving away from cloud DR. Built a self-hosted S3 backup server from repurposed hardware that receives about 15 GB of SQL backups per day with 30-day retention. Planned the next phase: an immutable Veeam repository for Hyper-V VMs and offsite copies to a secondary server in Jakarta.</p>
+        <div class="stack"><span>Garage S3</span><span>rclone</span><span>Ubuntu</span><span>SQL Server</span><span>Hyper-V</span><span>Veeam (next phase)</span></div>
+      </article>
+      <article class="card project" data-cat="automation infra">
+        <span class="tag">Web App</span>
+        <h3>QR Document Portal — AWS to SharePoint</h3>
+        <p>A portal where the QC team uploads product quality documents (PDF) and customers scan the QR code on the product to download them. Moved the document storage from AWS S3 to SharePoint on the existing Microsoft 365 license, which removed a cloud bill and gave QC a familiar place to manage files. Also restored the portal after the hosting migration to a new cPanel VPS.</p>
+        <div class="stack"><span>Laravel</span><span>PHP</span><span>SharePoint</span><span>Microsoft 365</span><span>cPanel</span></div>
       </article>
       <article class="card project" data-cat="infra">
         <span class="tag">Cloud</span>
@@ -287,6 +293,14 @@
           <div><h4>Problem</h4><p>The machine dashboard's daily summary didn't match the raw log: the day rolled over at 07:00 instead of midnight, and some state changes were never counted.</p></div>
           <div><h4>Root cause</h4><p>The recap was built incrementally in memory using UTC dates, so a restart or a missed transition corrupted the totals.</p></div>
           <div><h4>Fix & result</h4><p>Replaced it with a full recompute from the event log using SQL window functions, cut at local midnight, then backfilled 7 months of history (1,600+ daily rows) after taking a backup.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Web Hosting</span> Subdomains went down after a hosting migration</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>After moving cPanel to a new VPS, internal web apps such as the QR document portal stopped opening — some didn't resolve, others threw PHP fatal errors.</p></div>
+          <div><h4>Root cause</h4><p>Three things at once: internal DNS still pointed to the old server, the app's Composer dependencies (<code>vendor/</code>) weren't carried over, and the new server's minimum PHP was 8.1 while the apps were built for 7.1.</p></div>
+          <div><h4>Fix & result</h4><p>Updated the internal DNS records, restored the missing dependencies, then checked and patched the legacy code for PHP 8.1. Both portals came back online.</p></div>
         </div>
       </details>
       <details class="case">
