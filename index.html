@@ -9,13 +9,13 @@
   <meta property="og:description" content="I keep manufacturing IT running — and build the tools that automate it.">
   <meta property="og:url" content="https://weykingz.my.id">
   <meta property="og:image" content="https://weykingz.my.id/img/portrait.jpg">
-  <meta name="theme-color" content="#0c1046">
+  <meta name="theme-color" content="#161d78">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23161d78'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23c79e4c'>VA</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/portrait.jpg">
-  <link rel="stylesheet" href="style.css?v=20261118b">
+  <link rel="stylesheet" href="style.css?v=20261118c">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -29,8 +29,12 @@
     </figure>
     <h1>Vikrie Ammar Kholis</h1>
     <p class="role">IT Systems & Infrastructure Specialist</p>
-    <p class="tagline">I keep manufacturing IT running — networks, servers, Microsoft 365 and security — and build the tools that automate it.</p>
+    <p class="tagline">I keep a 3-site manufacturing company's IT running — and build the tools that turn its manual work into automated processes.</p>
     <p class="status"><span class="dot"></span> Open to opportunities · Serang, Banten</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#work">View my work</a>
+      <a class="btn btn-ghost" href="files/Vikrie-Ammar-Kholis-CV.pdf" target="_blank" rel="noopener" download>Download CV</a>
+    </div>
 
     <nav class="toc" aria-label="Sections">
       <a href="#about"><span class="line"></span>About</a>
@@ -43,9 +47,10 @@
     </nav>
 
     <ul class="social">
-      <li><a href="mailto:vikriammar@gmail.com" aria-label="Email">✉ Email</a></li>
-      <li><a href="https://www.linkedin.com/in/vikrie-ammar-kholis" target="_blank" rel="noopener" aria-label="LinkedIn">in LinkedIn</a></li>
-      <li><a href="https://github.com/ammarkholis" target="_blank" rel="noopener" aria-label="GitHub">⌂ GitHub</a></li>
+      <li><a href="#" class="js-wa" data-msg="Halo Vikrie, saya melihat portfolio Anda di weykingz.my.id dan ingin berdiskusi." target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="mailto:vikriammar@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vikrie-ammar-kholis" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/ammarkholis" target="_blank" rel="noopener">GitHub</a></li>
     </ul>
   </header>
 
@@ -54,24 +59,30 @@
 
     <section id="about" class="block">
       <h2 class="label">About</h2>
-      <p>I'm an IT Systems & Infrastructure Specialist with <strong>5+ years</strong> running end-to-end IT for a fiber optic cable manufacturer — head office plus two plant sites.</p>
-      <p>Day to day that means networks, Windows Server and Active Directory, Microsoft 365, firewalls and endpoint security. What I enjoy most is the other half: spotting a manual process that wastes people's time and <strong>building the tool that replaces it</strong> — with Power Apps, Power Automate, or a bit of custom code — then taking it from requirements to training and go-live.</p>
       <div class="stats">
         <div><strong>5+</strong><span>years in manufacturing IT</span></div>
         <div><strong>30%</strong><span>IT cost reduction</span></div>
-        <div><strong>3</strong><span>sites supported</span></div>
+        <div><strong>3</strong><span>sites, ~160 devices</span></div>
       </div>
-      <p class="skills-line"><span>Windows Server & AD</span><span>Microsoft 365</span><span>Power Platform</span><span>Palo Alto NGFW</span><span>MikroTik</span><span>Hyper-V</span><span>Zabbix & Grafana</span><span>ESP32 / MQTT</span><span>Node.js</span><span>Linux</span></p>
+      <p>I started in 2018 as an IT intern at a fishing port, documenting its office network. In 2021 I joined a <strong>fiber optic cable manufacturer</strong>, and I've been running its IT ever since — a head office and two plants, where a network outage stops production.</p>
+      <p>Keeping the lights on is half the job. The half I enjoy most starts with a simple question: <em>"why is this still done by hand?"</em> Paper handover forms, machines checked by walking the floor, outages discovered by users — each one became a tool I built, from requirements to user training and go-live.</p>
+      <dl class="skills">
+        <dt>Infrastructure</dt><dd>Windows Server, Active Directory and Hyper-V for a 3-site company; backup and DR for the ERP.</dd>
+        <dt>Network & security</dt><dd>Palo Alto NGFW with SD-WAN and VPN, MikroTik at branches, UniFi Wi-Fi, endpoint protection for ~160 devices.</dd>
+        <dt>Automation</dt><dd>Power Apps and Power Automate for internal apps; Node.js and Python for monitoring tools.</dd>
+        <dt>Monitoring</dt><dd>Zabbix and Grafana for servers and ISPs, ESP32 + MQTT for machines, Telegram for alerts.</dd>
+      </dl>
     </section>
 
     <!-- Featured case studies -->
     <section id="work" class="block">
       <h2 class="label">Featured Work</h2>
-      <p class="intro">Five projects, each told the same way: <em>why</em> it was needed, <em>what</em> I built, and <em>what changed</em>.</p>
+      <p class="intro">Five projects, each told the same way: <em>why</em> it was needed, <em>what</em> I built, and <em>what changed</em>. They are internal company tools, so there are no public demo links — screenshots and numbers instead.</p>
 
       <article class="case">
         <p class="case-kicker">01 · Industry 4.0 · IoT</p>
         <h3>Real-Time Machine Monitoring</h3>
+        <p class="my-role"><b>My role:</b> built the whole software side — MQTT broker, subscriber, database, dashboard and alerts — on ESP32 hardware provided by maintenance.</p>
         <div class="case-grid">
           <div><h4>Context</h4><p>The maintenance team checked machine status by walking the floor or waiting for someone to report a stop. There was no history and no way to see downtime per machine.</p></div>
           <div><h4>What I built</h4><p>ESP32 devices wired to each machine's power and process signals publish every status change over MQTT. A Node.js subscriber stores the history in MySQL, and a responsive dashboard shows live status, logs and daily recaps — on phones, laptops and the TV in the monitoring room — with Telegram notifications to the maintenance group.</p></div>
@@ -84,6 +95,7 @@
         <button class="case-shot" data-full="img/isp-dashboard.jpg" data-cap="Multi-site ISP monitoring — live bandwidth and link status per site (ISP names redacted)"><img src="img/isp-dashboard.jpg" alt="Grafana dashboard showing ISP link status and bandwidth for three sites" loading="lazy" width="1600" height="640"></button>
         <p class="case-kicker">02 · Monitoring · NOC</p>
         <h3>Multi-Site ISP & Server Monitoring</h3>
+        <p class="my-role"><b>My role:</b> designed and set up the monitoring server, dashboards and alert rules end to end.</p>
         <div class="case-grid">
           <div><h4>Context</h4><p>When the internet went down at a plant, IT usually heard it from users first. Nobody could say which ISP failed, when, or for how long — so SLA claims with providers were guesswork.</p></div>
           <div><h4>What I built</h4><p>A central NOC on Zabbix + Grafana: live bandwidth and up/down status for every ISP link at every site, plus Hyper-V hosts, VMs, firewalls and routers. Alerts go to separate Server and Network Telegram channels with severity filters, and the team gets a read-only dashboard.</p></div>
@@ -96,6 +108,7 @@
         <button class="case-shot" data-full="img/bast-app.jpg" data-cap="BAST IT — adding a new asset (asset code generated automatically)"><img src="img/bast-app.jpg" alt="BAST IT app form for adding a new IT asset" loading="lazy" width="1632" height="815"></button>
         <p class="case-kicker">03 · Power Platform</p>
         <h3>BAST IT — Asset Handover App</h3>
+        <p class="my-role"><b>My role:</b> gathered requirements, wrote the functional document, built the app, trained users and supported go-live.</p>
         <div class="case-grid">
           <div><h4>Context</h4><p>Every laptop or PC handed to an employee needed a paper handover form (BAST). Forms got lost, and nobody could quickly answer "who holds this device?"</p></div>
           <div><h4>What I built</h4><p>A Power Apps app on SharePoint lists: register assets with auto-generated codes, create a BAST with digital sign-off, and generate the handover document automatically. The current holder updates itself on every handover.</p></div>
@@ -107,6 +120,7 @@
       <article class="case">
         <p class="case-kicker">04 · Backup & Disaster Recovery</p>
         <h3>On-Prem Backup & DR Platform</h3>
+        <p class="my-role"><b>My role:</b> designed the backup architecture, built the server and automated the daily backup jobs.</p>
         <div class="case-grid">
           <div><h4>Context</h4><p>The ERP system's disaster recovery ran on a cloud service that was costly and had never been tested. The company decided to stop it — which meant the ERP needed a new safety net.</p></div>
           <div><h4>What I built</h4><p>A self-hosted S3-compatible backup server on repurposed hardware, receiving SQL backups automatically every day with 30-day retention. Next phase is designed: an immutable Veeam repository for the Hyper-V VMs and offsite copies to a secondary server in Jakarta.</p></div>
@@ -118,6 +132,7 @@
       <article class="case">
         <p class="case-kicker">05 · Web App · Microsoft 365</p>
         <h3>QR Document Portal — AWS to SharePoint</h3>
+        <p class="my-role"><b>My role:</b> led the storage migration and brought the portal back online after the server move.</p>
         <div class="case-grid">
           <div><h4>Context</h4><p>Customers scan a QR code on the product to download its quality documents, which the QC team uploads as PDFs. Storage sat on AWS S3 — an extra bill and a place QC couldn't manage themselves. A hosting migration later took the portal offline.</p></div>
           <div><h4>What I built</h4><p>Moved document storage to SharePoint on the existing Microsoft 365 license. After the move to a new cPanel VPS, fixed internal DNS, restored missing Composer dependencies and patched the legacy code for PHP 8.1.</p></div>
@@ -253,9 +268,30 @@
     <!-- Contact -->
     <section id="contact" class="block contact">
       <h2 class="label">Contact</h2>
-      <p class="big">Looking for someone to keep your infrastructure reliable — and automate the boring parts?</p>
-      <p>I'm open to IT infrastructure, system administration and automation roles. My inbox is always open.</p>
-      <a class="btn" href="mailto:vikriammar@gmail.com">Say hello</a>
+      <p class="big">Have a role, a project, or an IT problem to solve? Let's talk.</p>
+      <p>Open to IT infrastructure, system administration and automation roles — and to project collaborations. WhatsApp is the fastest way to reach me.</p>
+
+      <form class="wa-form" id="wa-form">
+        <div class="row">
+          <label>Your name<input name="name" required maxlength="60" autocomplete="name" placeholder="e.g. Budi"></label>
+          <label>Topic
+            <select name="topic">
+              <option>Job opportunity</option>
+              <option>Project collaboration</option>
+              <option>IT consultation</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <label>Message<textarea name="msg" rows="3" maxlength="500" placeholder="A short note about what you need"></textarea></label>
+        <button class="btn btn-wa" type="submit">Chat on WhatsApp</button>
+        <p class="hint">Opens WhatsApp with your message pre-filled — nothing is stored on this site.</p>
+      </form>
+
+      <div class="contact-alt">
+        <button class="btn btn-ghost-dark" type="button" id="copy-email">Copy email address</button>
+        <a class="btn btn-ghost-dark" href="https://www.linkedin.com/in/vikrie-ammar-kholis" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
       <footer class="foot">© <span id="yr">2026</span> Vikrie Ammar Kholis · Built by hand with HTML & CSS · weykingz.my.id</footer>
     </section>
 
@@ -270,6 +306,25 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // WhatsApp — number assembled at runtime so it isn't sitting in the page as plain text
+  const waNum = ['62', '812', '2511', '0104'].join('');
+  const waLink = text => `https://wa.me/${waNum}?text=${encodeURIComponent(text)}`;
+  document.querySelectorAll('.js-wa').forEach(a => { a.href = waLink(a.dataset.msg); });
+  document.getElementById('wa-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, name = f.name.value.trim(), topic = f.topic.value, msg = f.msg.value.trim();
+    const text = `Halo Vikrie, saya ${name}.\nTopik: ${topic}\n\n${msg || '(dari weykingz.my.id)'}`;
+    window.open(waLink(text), '_blank', 'noopener');
+  });
+
+  // Copy email
+  document.getElementById('copy-email').addEventListener('click', async e => {
+    const b = e.currentTarget, email = 'vikriammar@gmail.com';
+    try { await navigator.clipboard.writeText(email); b.textContent = 'Copied: ' + email; }
+    catch { b.textContent = email; }
+    setTimeout(() => { b.textContent = 'Copy email address'; }, 3000);
+  });
 
   // Scrollspy for the side navigation
   const links = [...document.querySelectorAll('.toc a')];
@@ -300,7 +355,7 @@
     certs: () => '2025-04  Palo Alto NGFW Configuration & Management\n2024-12  Data Center x IoT — APTIKNAS\n2024-08  Web Development with WordPress (76.5h) — Udemy\n2024-01  5 IT Infrastructure Monitoring Trends — APTIKNAS\n2023-05  Integrated Management System Awareness — KSI\n2022-05  Training Knowledge Palo Alto Firewall',
     ping: () => 'PING vikrie (open-to-work): 56 data bytes\n64 bytes from vikrie: icmp_seq=1 ttl=64 time=0.42 ms\n64 bytes from vikrie: icmp_seq=2 ttl=64 time=0.39 ms\n--- 0% packet loss ---\nStatus: ONLINE ✓',
     uptime: () => { const y = (Date.now() - new Date('2021-01-25')) / 31557600000; return `up ${y.toFixed(1)} years in manufacturing IT, load average: coffee, coffee, coffee`; },
-    contact: () => 'email    : vikriammar@gmail.com\nlinkedin : linkedin.com/in/vikrie-ammar-kholis\ngithub   : github.com/ammarkholis',
+    contact: () => 'whatsapp : use the "Chat on WhatsApp" form below\nemail    : vikriammar@gmail.com\nlinkedin : linkedin.com/in/vikrie-ammar-kholis\ngithub   : github.com/ammarkholis',
     sudo: () => 'Nice try 😄 — this incident will be reported.',
     'rm -rf /': () => 'Permission denied. Backups are immutable anyway.',
     hello: () => 'Hi there! 👋 Type "help" to see what I can do.'
