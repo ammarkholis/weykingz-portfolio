@@ -25,7 +25,8 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
+      <a href="#casestudies">Case Studies</a>
+      <a href="#terminal">Terminal</a>
       <a href="#contact" class="btn btn-sm">Contact</a>
     </nav>
   </div>
@@ -60,7 +61,7 @@
     <div><strong>5+</strong><span>Years in manufacturing IT</span></div>
     <div><strong>30%</strong><span>IT cost reduction</span></div>
     <div><strong>3</strong><span>Sites supported</span></div>
-    <div><strong>4+</strong><span>Internal apps delivered</span></div>
+    <div><strong>15+</strong><span>Projects delivered</span></div>
   </div>
 </section>
 
@@ -172,43 +173,181 @@
   <div class="container">
     <p class="eyebrow">Projects</p>
     <h2>Selected work</h2>
-    <div class="cards two">
-      <article class="card project">
+    <div class="filters" role="tablist" aria-label="Filter projects">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="automation">Automation & Apps</button>
+      <button class="filter" data-filter="infra">Infrastructure</button>
+      <button class="filter" data-filter="monitoring">Monitoring</button>
+      <button class="filter" data-filter="security">Security</button>
+    </div>
+    <div class="cards two" id="project-grid">
+      <article class="card project" data-cat="infra">
+        <span class="tag">Active Directory</span>
+        <h3>Domain Controller Modernization</h3>
+        <p>Planned and executed the replacement of an end-of-life Windows Server 2008 R2 domain controller with a new Server 2019 DC on Hyper-V — health pre-checks, FSMO and DNS migration plan in seven phases.</p>
+        <div class="stack"><span>Windows Server 2019</span><span>AD DS</span><span>DNS</span><span>Hyper-V</span></div>
+      </article>
+      <article class="card project" data-cat="infra">
+        <span class="tag">Network</span>
+        <h3>Multi-ISP SD-WAN Migration</h3>
+        <p>Onboarded a new 100 Mbps ISP as primary link on a Palo Alto PA-440 SD-WAN setup and mapped every dependency (NAT, IPsec tunnels, VPN portal, service routes) before retiring the old provider.</p>
+        <div class="stack"><span>Palo Alto PA-440</span><span>SD-WAN</span><span>IPsec</span><span>GlobalProtect</span></div>
+      </article>
+      <article class="card project" data-cat="infra">
+        <span class="tag">Wireless</span>
+        <h3>UniFi Controller Migration</h3>
+        <p>Moved a legacy UniFi controller (v7.3, MongoDB 3.4) to a fresh v10.6 install on an Ubuntu VM with a settings-only restore — all 16 access points re-adopted with zero re-provisioning.</p>
+        <div class="stack"><span>UniFi</span><span>Ubuntu 24.04</span><span>MongoDB</span></div>
+      </article>
+      <article class="card project" data-cat="security">
+        <span class="tag">Content Filtering</span>
+        <h3>Social Media & Game Blocking</h3>
+        <p>Rebuilt a branch-site MikroTik policy that never matched. New design combines DNS sinkholing, TLS SNI inspection and QUIC / DoH blocking — 250+ rules covering 20+ platforms while keeping WhatsApp working.</p>
+        <div class="stack"><span>MikroTik RouterOS 7</span><span>DNS</span><span>TLS SNI</span></div>
+      </article>
+      <article class="card project" data-cat="security">
+        <span class="tag">Endpoint Security</span>
+        <h3>Endpoint Protection Fleet Upgrade</h3>
+        <p>Rolled out Network Agent and Kaspersky Endpoint Security upgrades to ~160 managed devices through remote installation tasks in Kaspersky Security Center, closing a published agent vulnerability.</p>
+        <div class="stack"><span>Kaspersky KSC 15</span><span>KES 14</span><span>Patch Management</span></div>
+      </article>
+      <article class="card project" data-cat="security">
+        <span class="tag">Hardening</span>
+        <h3>Linux Server Security Audit</h3>
+        <p>Wrote a read-only audit script to review Linux VMs for signs of compromise — users, SSH logins, persistence, listening ports and outbound connections — and produced a hardening checklist.</p>
+        <div class="stack"><span>Bash</span><span>Ubuntu</span><span>SSH</span><span>ufw</span></div>
+      </article>
+      <article class="card project" data-cat="infra">
+        <span class="tag">Backup</span>
+        <h3>Backup Server from a Spare Laptop</h3>
+        <p>Turned a retired laptop into an on-prem S3-compatible backup target for ERP SQL backups, with a roadmap to an immutable hardened repository for Hyper-V VMs.</p>
+        <div class="stack"><span>Garage S3</span><span>rclone</span><span>Ubuntu</span><span>Veeam (planned)</span></div>
+      </article>
+      <article class="card project" data-cat="infra">
+        <span class="tag">Cloud</span>
+        <h3>Cloud DR Decommissioning</h3>
+        <p>Safely retired an unused cloud disaster-recovery environment — VPN, NAT gateway, instances, volumes and snapshots — cutting a recurring monthly bill to zero.</p>
+        <div class="stack"><span>AWS</span><span>EC2</span><span>VPC</span><span>Cost Optimization</span></div>
+      </article>
+      <article class="card project" data-cat="automation">
+        <span class="tag">Microsoft Lists</span>
+        <h3>HR Data Migration to Microsoft Lists</h3>
+        <p>Converted an HR spreadsheet into a structured Microsoft List without touching the source file, and caught a locale bug that had silently swapped day and month in 39 records.</p>
+        <div class="stack"><span>SharePoint</span><span>Microsoft Lists</span><span>Excel</span></div>
+      </article>
+      <article class="card project" data-cat="automation">
         <span class="tag">Power Apps</span>
         <h3>BAST IT — Asset Handover App</h3>
         <p>Digitized the IT device handover (serah terima) process end-to-end: asset lookup, digital sign-off and automatic document generation, replacing paper forms entirely.</p>
         <div class="stack"><span>Power Apps</span><span>SharePoint Lists</span><span>Power Automate</span></div>
       </article>
-      <article class="card project">
+      <article class="card project" data-cat="automation">
         <span class="tag">Power Automate</span>
         <h3>IT Ticketing & Contract Reminder</h3>
         <p>Request form to Planner task and email notification, with SLA escalation flows and automatic reminders before vendor contracts expire.</p>
         <div class="stack"><span>Microsoft Forms</span><span>Power Automate</span><span>Planner</span><span>Outlook</span></div>
       </article>
-      <article class="card project">
+      <article class="card project" data-cat="automation">
         <span class="tag">Power Platform</span>
         <h3>IT Inventory Management</h3>
         <p>Multi-site stock and asset tracking app giving the IT team a real-time view of devices, spare parts and movements between locations.</p>
         <div class="stack"><span>Power Apps</span><span>SharePoint Lists</span></div>
       </article>
-      <article class="card project">
+      <article class="card project" data-cat="monitoring automation">
         <span class="tag">Industry 4.0</span>
         <h3>Machine Monitoring Dashboard</h3>
         <p>Real-time production dashboard: machine data streamed over MQTT, stored in a database and visualized for management decision-making.</p>
         <div class="stack"><span>MQTT</span><span>Node.js</span><span>MariaDB</span><span>JavaScript</span></div>
       </article>
-      <article class="card project">
+      <article class="card project" data-cat="monitoring">
         <span class="tag">Monitoring</span>
         <h3>NOC Monitoring & Alerting</h3>
         <p>Centralized monitoring for servers and network devices with Grafana dashboards and Telegram alerts split by team, so issues are caught before users notice.</p>
         <div class="stack"><span>Zabbix</span><span>Grafana</span><span>Telegram Bot</span><span>Linux</span></div>
       </article>
-      <article class="card project">
+      <article class="card project" data-cat="monitoring">
         <span class="tag">Infrastructure</span>
         <h3>UPS Power Monitoring</h3>
-        <p>Two-site UPS monitoring with a web status page and Telegram notifications for power failures and battery health.</p>
-        <div class="stack"><span>NUT</span><span>Python Flask</span><span>Telegram Bot</span></div>
+        <p>Two-site UPS monitoring with a web status page, hourly Telegram reports and alerts for power failure, low battery and room temperature.</p>
+        <div class="stack"><span>NUT</span><span>Python Flask</span><span>Telegram Bot</span><span>NSSM</span></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="casestudies" class="section">
+  <div class="container">
+    <p class="eyebrow">Problem Solving</p>
+    <h2>Case studies</h2>
+    <p class="section-lead">Real issues I've debugged in production — what broke, how I found it, and what changed.</p>
+    <div class="cases">
+      <details class="case" open>
+        <summary><span class="case-tag">Data</span> Production recap showed the wrong hours every day</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>The machine dashboard's daily summary didn't match the raw log: the day rolled over at 07:00 instead of midnight, and some state changes were never counted.</p></div>
+          <div><h4>Root cause</h4><p>The recap was built incrementally in memory using UTC dates, so a restart or a missed transition corrupted the totals.</p></div>
+          <div><h4>Fix & result</h4><p>Replaced it with a full recompute from the event log using SQL window functions, cut at local midnight, then backfilled 7 months of history (1,600+ daily rows) after taking a backup.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Network</span> Firewall rules that never blocked anything</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>Social media was supposed to be blocked at a branch site, but every app still worked.</p></div>
+          <div><h4>Root cause</h4><p>The rules referenced an address list that didn't exist, and FastTrack let traffic skip inspection anyway.</p></div>
+          <div><h4>Fix & result</h4><p>Rebuilt the policy as one re-importable script: DNS sinkhole + TLS SNI reject + QUIC/DoH block, placed above FastTrack. Verified rule hit counters on the router.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Wireless</span> The controller that couldn't be turned off</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>The migration plan was to take over the old UniFi controller's IP so access points would reconnect automatically.</p></div>
+          <div><h4>Root cause</h4><p>Investigation showed the new VM actually ran <em>on</em> the old PC, which also served file shares — shutting it down would have taken everything offline.</p></div>
+          <div><h4>Fix & result</h4><p>Kept the host, redirected APs with an inform-host override instead. All 16 APs moved over with no site visit.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Data quality</span> 39 birthdays silently swapped by Excel</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>While importing HR data into Microsoft Lists, some dates looked plausible but felt off.</p></div>
+          <div><h4>Root cause</h4><p>A locale mismatch made Excel read dd/mm as mm/dd. Proof: none of the 39 converted dates had a day above 12 — statistically impossible.</p></div>
+          <div><h4>Fix & result</h4><p>Imported the column as text exactly as displayed, left the source file untouched, and reported the affected rows to HR for correction.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Infrastructure</span> UPS monitoring on a hypervisor without USB passthrough</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>UPS monitoring ran on a laptop that wasn't on 24/7, and the target Hyper-V VM couldn't see the UPS's USB port.</p></div>
+          <div><h4>Root cause</h4><p>Hyper-V doesn't pass USB devices through to guests.</p></div>
+          <div><h4>Fix & result</h4><p>Split the stack: NUT server on the physical host (firewalled to the monitoring VM only), dashboard and Telegram alerts as a systemd service on Linux.</p></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="case-tag">Monitoring</span> Alert fatigue in the NOC</summary>
+        <div class="case-body">
+          <div><h4>Problem</h4><p>One Telegram group received every alert — server, network and noisy Windows services — so real incidents got buried.</p></div>
+          <div><h4>Root cause</h4><p>A single alert action with no severity or scope filtering.</p></div>
+          <div><h4>Fix & result</h4><p>Separate Server and Network channels, severity / tag-based conditions, and exclusions for known-noisy services. Shared Grafana dashboards with a read-only viewer role.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="terminal" class="section alt">
+  <div class="container">
+    <p class="eyebrow">Try it</p>
+    <h2>Ask my terminal</h2>
+    <p class="section-lead">Type a command below — start with <code>help</code>.</p>
+    <div class="term" id="term">
+      <div class="term-bar"><span></span><span></span><span></span><b>vikrie@weykingz: ~</b></div>
+      <div class="term-out" id="term-out" aria-live="polite"></div>
+      <form class="term-in" id="term-form" autocomplete="off">
+        <label for="term-input">vikrie@weykingz:~$</label>
+        <input id="term-input" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command">
+      </form>
+      <div class="term-hints">
+        <button data-cmd="whoami">whoami</button><button data-cmd="skills">skills</button><button data-cmd="projects">projects</button><button data-cmd="ping">ping</button><button data-cmd="contact">contact</button>
+      </div>
     </div>
   </div>
 </section>
@@ -274,6 +413,58 @@
     btn.setAttribute('aria-expanded', open);
   });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Project filters
+  document.querySelectorAll('.filter').forEach(f => f.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+    f.classList.add('active');
+    const cat = f.dataset.filter;
+    document.querySelectorAll('#project-grid .project').forEach(p => {
+      p.hidden = !(cat === 'all' || p.dataset.cat.split(' ').includes(cat));
+    });
+  }));
+
+  // Interactive terminal
+  const out = document.getElementById('term-out'), input = document.getElementById('term-input');
+  const history = []; let hIdx = 0;
+  const C = {
+    help: () => 'Available commands:\n  whoami     who is this guy?\n  skills     tech stack\n  projects   list projects\n  cases      problems I have solved\n  certs      certifications\n  ping       check if I am online\n  uptime     years in IT\n  contact    get in touch\n  clear      clear the screen',
+    whoami: () => 'Vikrie Ammar Kholis\nIT Systems & Infrastructure Specialist · Power Platform Developer\nSerang, Banten — Indonesia',
+    skills: () => 'infra      : Windows Server, AD/Entra ID, GPO, Hyper-V, Linux\nnetwork    : Palo Alto NGFW, MikroTik, UniFi, SD-WAN, IPsec\nm365       : Exchange Online, SharePoint, Teams, Intune\nautomation : Power Apps, Power Automate, Power BI\nmonitoring : Zabbix, Grafana, NUT, Telegram bots\ncode       : HTML/CSS/JS, Node.js, Python Flask, SQL',
+    projects: () => [...document.querySelectorAll('#project-grid .project h3')].map((h, i) => `  ${String(i + 1).padStart(2, '0')}. ${h.textContent}`).join('\n') + '\n\n→ scroll up to #projects for details',
+    cases: () => [...document.querySelectorAll('.case summary')].map(s => '  • ' + s.lastChild.textContent.trim()).join('\n'),
+    certs: () => '2025  Palo Alto NGFW Configuration & Management\n2024  IT Infrastructure Monitoring Trends — APTIKNAS\n2024  Web Development — Udemy\n2023  ISO 9001 / 14001 / 45001 Awareness\n2022  Design Rally: Palo Alto Firewall Knowledge',
+    ping: () => 'PING vikrie (open-to-work): 56 data bytes\n64 bytes from vikrie: icmp_seq=1 ttl=64 time=0.42 ms\n64 bytes from vikrie: icmp_seq=2 ttl=64 time=0.39 ms\n--- 2 packets transmitted, 2 received, 0% packet loss ---\nStatus: ONLINE ✓',
+    uptime: () => { const y = (Date.now() - new Date('2021-01-25')) / 31557600000; return `up ${y.toFixed(1)} years in manufacturing IT, load average: coffee, coffee, coffee`; },
+    contact: () => 'email    : vikriammar@gmail.com\nlinkedin : linkedin.com/in/vikrie-ammar-kholis\ngithub   : github.com/ammarkholis',
+    sudo: () => 'Nice try 😄 — this incident will be reported.',
+    'rm -rf /': () => 'Permission denied. Backups are immutable anyway.',
+    hello: () => 'Hi there! 👋 Type "help" to see what I can do.'
+  };
+  C.ls = C.projects; C.hi = C.hello;
+  function print(cmd, text) {
+    const line = document.createElement('div');
+    line.innerHTML = '<span class="p">vikrie@weykingz:~$</span> ';
+    line.appendChild(document.createTextNode(cmd));
+    out.appendChild(line);
+    if (text) { const pre = document.createElement('pre'); pre.textContent = text; out.appendChild(pre); }
+    out.scrollTop = out.scrollHeight;
+  }
+  function run(raw) {
+    const cmd = raw.trim(); if (!cmd) return;
+    history.push(cmd); hIdx = history.length;
+    if (cmd === 'clear') { out.innerHTML = ''; return; }
+    const key = cmd.toLowerCase().startsWith('sudo') ? 'sudo' : cmd.toLowerCase();
+    print(cmd, C[key] ? C[key]() : `command not found: ${cmd}\nType "help" for a list of commands.`);
+  }
+  document.getElementById('term-form').addEventListener('submit', e => { e.preventDefault(); run(input.value); input.value = ''; });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowUp' && hIdx > 0) { input.value = history[--hIdx]; e.preventDefault(); }
+    if (e.key === 'ArrowDown') { hIdx = Math.min(history.length, hIdx + 1); input.value = history[hIdx] || ''; e.preventDefault(); }
+  });
+  document.querySelectorAll('.term-hints button').forEach(b => b.addEventListener('click', () => { run(b.dataset.cmd); input.focus({ preventScroll: true }); }));
+  document.getElementById('term').addEventListener('click', e => { if (e.target.tagName !== 'BUTTON') input.focus({ preventScroll: true }); });
+  print('welcome', 'Welcome to weykingz.my.id — type "help" to get started.');
 </script>
 </body>
 </html>

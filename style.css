@@ -188,6 +188,64 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); }
 .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .footer { background: #10132f; color: rgba(255,255,255,.6); text-align: center; padding: 24px 0; font-size: .88rem; }
 
+/* Project filters */
+.section-lead { color: var(--muted); max-width: 640px; margin: 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.filter {
+  font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+  padding: .5em 1.1em; border-radius: 999px; border: 1px solid var(--line);
+  background: #fff; color: var(--navy-2); transition: all .15s;
+}
+.filter:hover { border-color: var(--gold); }
+.filter.active { background: var(--navy-2); color: #fff; border-color: var(--navy-2); }
+.project[hidden] { display: none; }
+
+/* Case studies */
+.cases { margin-top: 32px; display: grid; gap: 14px; }
+.case { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); }
+.case summary {
+  cursor: pointer; list-style: none; padding: 20px 24px; font-weight: 600; color: var(--navy);
+  display: flex; align-items: center; gap: 12px;
+}
+.case summary::-webkit-details-marker { display: none; }
+.case summary::after { content: "+"; margin-left: auto; font-size: 1.4rem; color: var(--gold); transition: transform .2s; }
+.case[open] summary::after { transform: rotate(45deg); }
+.case-tag {
+  flex: none; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em;
+  background: var(--gold-soft); color: #8a6a2a; padding: .3em .7em; border-radius: 6px;
+}
+.case-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0 24px 24px; }
+.case-body h4 { margin: 0 0 .4em; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); }
+.case-body p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+/* Terminal */
+code { background: var(--gold-soft); color: var(--navy); padding: .1em .4em; border-radius: 4px; font-size: .9em; }
+.term {
+  margin-top: 28px; background: #10132f; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 20px 50px rgba(16, 19, 47, .3); border: 1px solid #262b5e;
+  font-family: "Cascadia Code", "Consolas", "SFMono-Regular", Menlo, monospace; font-size: .9rem; color: #d7dbf5;
+}
+.term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #181c45; border-bottom: 1px solid #262b5e; }
+.term-bar span { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.term-bar span:nth-child(2) { background: #febc2e; }
+.term-bar span:nth-child(3) { background: #28c840; }
+.term-bar b { margin-left: 10px; font-weight: 500; color: #9aa0c8; font-size: .82rem; }
+.term-out { padding: 16px 18px 4px; height: 280px; overflow-y: auto; }
+.term-out pre { margin: 4px 0 14px; white-space: pre-wrap; font: inherit; color: #c7cbe8; }
+.term-out .p, .term-in label { color: var(--gold); }
+.term-in { display: flex; align-items: center; gap: 8px; padding: 6px 18px 16px; }
+.term-in label { flex: none; }
+.term-in input {
+  flex: 1; min-width: 0; background: transparent; border: 0; outline: 0;
+  color: #fff; font: inherit; caret-color: var(--gold);
+}
+.term-hints { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 18px 16px; border-top: 1px solid #262b5e; }
+.term-hints button {
+  font: inherit; font-size: .8rem; cursor: pointer; padding: .35em .9em; border-radius: 6px;
+  background: #1d2257; color: #d7dbf5; border: 1px solid #2f3575;
+}
+.term-hints button:hover { border-color: var(--gold); color: #fff; }
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero-inner, .two-col { grid-template-columns: 1fr; }
@@ -196,6 +254,10 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); }
   .stats-grid > div:nth-child(2) { border-right: 0; }
   .stats-grid > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .tl-item { grid-template-columns: 1fr; gap: 6px; }
+  .case-body { grid-template-columns: 1fr; gap: 14px; }
+  .case summary { padding: 16px 18px; font-size: .95rem; }
+  .term-in label { display: none; }
+  .term-in::before { content: "$"; color: var(--gold); }
 }
 @media (max-width: 760px) {
   .menu-btn { display: block; }
