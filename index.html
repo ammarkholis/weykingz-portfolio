@@ -25,6 +25,7 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#fieldwork">Field Work</a>
       <a href="#casestudies">Case Studies</a>
       <a href="#terminal">Terminal</a>
       <a href="#contact" class="btn btn-sm">Contact</a>
@@ -47,7 +48,7 @@
       </ul>
     </div>
     <div class="hero-card">
-      <div class="avatar">VA</div>
+      <div class="avatar"><img src="img/profile.jpg" alt="Vikrie Ammar Kholis" width="120" height="120"></div>
       <h3>Vikrie Ammar Kholis</h3>
       <p>IT System Administrator<br>Power Platform Developer</p>
       <div class="meta">📍 Serang, Banten · Indonesia</div>
@@ -242,6 +243,7 @@
         <div class="stack"><span>SharePoint</span><span>Microsoft Lists</span><span>Excel</span></div>
       </article>
       <article class="card project" data-cat="automation">
+        <button class="shot" data-full="img/bast-app.jpg" data-cap="BAST IT — adding a new asset (asset code generated automatically)"><img src="img/bast-app.jpg" alt="BAST IT app form for adding a new IT asset" loading="lazy"></button>
         <span class="tag">Power Apps</span>
         <h3>BAST IT — Asset Handover App</h3>
         <p>Digitized the IT device handover (serah terima) process end-to-end: asset lookup, digital sign-off and automatic document generation, replacing paper forms entirely.</p>
@@ -266,6 +268,7 @@
         <div class="stack"><span>ESP32</span><span>MQTT (Mosquitto)</span><span>Node.js</span><span>MySQL</span><span>Telegram Bot</span></div>
       </article>
       <article class="card project" data-cat="monitoring">
+        <button class="shot" data-full="img/isp-dashboard.jpg" data-cap="Multi-site ISP monitoring — live bandwidth and link status per site (ISP names redacted)"><img src="img/isp-dashboard.jpg" alt="Grafana dashboard showing ISP link status and bandwidth for three sites" loading="lazy"></button>
         <span class="tag">Network Monitoring</span>
         <h3>Multi-Site ISP Monitoring</h3>
         <p>Live bandwidth monitoring for every ISP link at each site, with real-time Telegram alerts when a link goes down and when it comes back. You can see exactly when an ISP failed and how long the outage lasted, which makes SLA follow-ups with providers much easier.</p>
@@ -286,6 +289,35 @@
     </div>
   </div>
 </section>
+
+<section id="fieldwork" class="section">
+  <div class="container">
+    <p class="eyebrow">Field Work</p>
+    <h2>Hands-on, not just slides</h2>
+    <p class="section-lead">A few snapshots from the server room, the plant floor and the workbench. Click any photo to enlarge it.</p>
+    <div class="gallery">
+      <figure class="g-wide"><button data-full="img/server-dell.jpg" data-cap="Server maintenance — opening up a 2U rack server for cleaning and fan replacement"><img src="img/server-dell.jpg" alt="Open 2U rack server with memory and CPU heatsinks visible" loading="lazy"></button><figcaption>Rack server maintenance</figcaption></figure>
+      <figure><button data-full="img/otdr.jpg" data-cap="Fiber optic repair — OTDR trace to locate loss and verify the splice"><img src="img/otdr.jpg" alt="EXFO OTDR showing a fiber trace" loading="lazy"></button><figcaption>OTDR fiber testing</figcaption></figure>
+      <figure class="g-tall"><button data-full="img/fo-splice.jpg" data-cap="Fiber optic repair — re-terminating the link at the branch site"><img src="img/fo-splice.jpg" alt="Technician working on fiber optic cables next to a rack" loading="lazy"></button><figcaption>Fiber link repair</figcaption></figure>
+      <figure><button data-full="img/media-converter.jpg" data-cap="Fiber link back up — media converter showing FX link and power"><img src="img/media-converter.jpg" alt="Fiber media converter with link lights on" loading="lazy"></button><figcaption>Link restored</figcaption></figure>
+      <figure class="g-tall"><button data-full="img/rack.jpg" data-cap="Rack work — installing and re-cabling equipment in the server rack"><img src="img/rack.jpg" alt="Working inside a server rack" loading="lazy"></button><figcaption>Server rack work</figcaption></figure>
+      <figure class="g-pair">
+        <button data-full="img/kbs-before.jpg" data-cap="Before — dust-clogged CPU cooler on a branch server"><img src="img/kbs-before.jpg" alt="Dusty CPU cooler before maintenance" loading="lazy"><span class="badge">Before</span></button>
+        <button data-full="img/kbs-after.jpg" data-cap="After — cleaned chassis and replaced CPU cooler"><img src="img/kbs-after.jpg" alt="Clean server with new CPU cooler" loading="lazy"><span class="badge after">After</span></button>
+        <figcaption>Branch server preventive maintenance</figcaption>
+      </figure>
+      <figure class="g-tall"><button data-full="img/pc-upgrade.jpg" data-cap="Production floor PC upgrade"><img src="img/pc-upgrade.jpg" alt="Desktop PC opened for an upgrade" loading="lazy"></button><figcaption>Production PC upgrade</figcaption></figure>
+      <figure><button data-full="img/laptop-battery.jpg" data-cap="Laptop battery replacement"><img src="img/laptop-battery.jpg" alt="Laptop opened with battery exposed" loading="lazy"></button><figcaption>Battery replacement</figcaption></figure>
+      <figure><button data-full="img/laptop-teardown.jpg" data-cap="Laptop teardown for keyboard and fan service"><img src="img/laptop-teardown.jpg" alt="Laptop internals during teardown" loading="lazy"></button><figcaption>Laptop teardown & repair</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
 
 <section id="casestudies" class="section">
   <div class="container">
@@ -443,6 +475,14 @@
       p.hidden = !(cat === 'all' || p.dataset.cat.split(' ').includes(cat));
     });
   }));
+
+  // Lightbox
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+  document.querySelectorAll('[data-full]').forEach(b => b.addEventListener('click', () => {
+    lbImg.src = b.dataset.full; lbImg.alt = b.querySelector('img')?.alt || ''; lbCap.textContent = b.dataset.cap || '';
+    if (lb.showModal) lb.showModal(); else window.open(b.dataset.full, '_blank');
+  }));
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-close')) lb.close(); });
 
   // Interactive terminal
   const out = document.getElementById('term-out'), input = document.getElementById('term-input');
