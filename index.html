@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261118">
 </head>
 <body>
 
@@ -429,8 +429,9 @@
         <button class="cert-img" data-full="img/cert/paloalto-2022.jpg" data-cap="Training Knowledge Palo Alto Firewall — PT. Mitra Visindo Teknologi, 24–25 May 2022"><img src="img/cert/paloalto-2022.jpg" alt="Palo Alto Firewall training certificate of attendance" loading="lazy"></button>
         <div class="cert-body"><span class="yr">May 2022</span><h3>Training Knowledge Palo Alto Firewall</h3><p>PT. Mitra Visindo Teknologi</p></div>
       </article>
-      <article class="cert cert-text">
-        <div class="cert-body"><span class="yr">2023</span><h3>ISO 9001 / 14001 / 45001 Awareness</h3><p>Internal training — Quality, Environment & K3 Management</p></div>
+      <article class="cert">
+        <button class="cert-img" data-full="img/cert/ims-awareness.jpg" data-cap="Integrated Management System Awareness for Middle Management — KSI, May 2023"><img src="img/cert/ims-awareness.jpg" alt="Integrated Management System awareness training certificate" loading="lazy"></button>
+        <div class="cert-body"><span class="yr">May 2023</span><h3>Integrated Management System Awareness (ISO 9001 / 14001 / 45001)</h3><p>KSI · for Middle Management</p></div>
       </article>
     </div>
   </div>
@@ -514,7 +515,7 @@
     skills: () => 'infra      : Windows Server, AD/Entra ID, GPO, Hyper-V, Linux\nnetwork    : Palo Alto NGFW, MikroTik, UniFi, SD-WAN, IPsec\nm365       : Exchange Online, SharePoint, Teams, Intune\nautomation : Power Apps, Power Automate, Power BI\nmonitoring : Zabbix, Grafana, NUT, Telegram bots\niot        : ESP32, MQTT, Node.js\ncode       : HTML/CSS/JS, Node.js, Python Flask, SQL',
     projects: () => [...document.querySelectorAll('#project-grid .project h3')].map((h, i) => `  ${String(i + 1).padStart(2, '0')}. ${h.textContent}`).join('\n') + '\n\n→ scroll up to #projects for details',
     cases: () => [...document.querySelectorAll('.case summary')].map(s => '  • ' + s.lastChild.textContent.trim()).join('\n'),
-    certs: () => '2025-04  Palo Alto NGFW Configuration & Management — Mitra Visindo\n2024-12  Data Center x IoT: Growth and Challenges in 2025 — APTIKNAS\n2024-08  Web Development with WordPress (76.5h) — Udemy\n2024-01  5 IT Infrastructure Monitoring Trends — APTIKNAS\n2023     ISO 9001 / 14001 / 45001 Awareness — internal\n2022-05  Training Knowledge Palo Alto Firewall — Mitra Visindo',
+    certs: () => '2025-04  Palo Alto NGFW Configuration & Management — Mitra Visindo\n2024-12  Data Center x IoT: Growth and Challenges in 2025 — APTIKNAS\n2024-08  Web Development with WordPress (76.5h) — Udemy\n2024-01  5 IT Infrastructure Monitoring Trends — APTIKNAS\n2023-05  Integrated Management System Awareness — KSI\n2022-05  Training Knowledge Palo Alto Firewall — Mitra Visindo',
     ping: () => 'PING vikrie (open-to-work): 56 data bytes\n64 bytes from vikrie: icmp_seq=1 ttl=64 time=0.42 ms\n64 bytes from vikrie: icmp_seq=2 ttl=64 time=0.39 ms\n--- 2 packets transmitted, 2 received, 0% packet loss ---\nStatus: ONLINE ✓',
     uptime: () => { const y = (Date.now() - new Date('2021-01-25')) / 31557600000; return `up ${y.toFixed(1)} years in manufacturing IT, load average: coffee, coffee, coffee`; },
     contact: () => 'email    : vikriammar@gmail.com\nlinkedin : linkedin.com/in/vikrie-ammar-kholis\ngithub   : github.com/ammarkholis',
