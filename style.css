@@ -117,6 +117,19 @@ main > section { max-width: 760px; }
 }
 .case-shot img { display: block; width: 100%; height: auto; max-height: 290px; object-fit: cover; object-position: top left; transition: transform .4s; }
 .case-shot:hover img { transform: scale(1.02); }
+/* multi-screenshot header: one wide shot + two thumbnails */
+.case-shots {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: -28px -28px 22px;
+  background: var(--line); border-radius: 12px 12px 0 0; overflow: hidden; border-bottom: 1px solid var(--line);
+}
+.case-shots .case-shot { grid-column: 1 / -1; width: 100%; margin: 0; border: 0; border-radius: 0; }
+.case-thumb { position: relative; display: block; height: 150px; padding: 0; border: 0; overflow: hidden; cursor: zoom-in; background: var(--cream); }
+.case-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform .4s; }
+.case-thumb:hover img { transform: scale(1.04); }
+.case-thumb span {
+  position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
+  background: var(--blue, #161d78); color: #fff; font: 600 .72rem/1.2 Poppins, sans-serif;
+}
 .case-kicker { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin: 0 0 4px; }
 .case h3 { font-size: 1.35rem; margin-bottom: 8px; }
 .my-role { margin: 0 0 16px; font-size: .88rem; color: var(--muted); background: var(--cream); padding: 8px 12px; border-radius: 8px; }
@@ -252,6 +265,9 @@ main > section { max-width: 760px; }
   .skills dd { margin-bottom: 10px; }
   .case { padding: 20px; }
   .case-shot { width: calc(100% + 40px); margin: -20px -20px 18px; }
+  .case-shots { margin: -20px -20px 18px; }
+  .case-shots .case-shot { width: 100%; margin: 0; }
+  .case-thumb { height: 110px; }
   .case-grid > div { grid-template-columns: 1fr; gap: 4px; }
   .wa-form .row { grid-template-columns: 1fr; }
   .contact .big { font-size: 1.25rem; }

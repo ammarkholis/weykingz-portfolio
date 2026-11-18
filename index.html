@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/portrait.jpg">
-  <link rel="stylesheet" href="style.css?v=20261118c">
+  <link rel="stylesheet" href="style.css?v=20261118d">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -64,8 +64,8 @@
         <div><strong>30%</strong><span>IT cost reduction</span></div>
         <div><strong>3</strong><span>sites, ~160 devices</span></div>
       </div>
-      <p>I started in 2018 as an IT intern at a fishing port, documenting its office network. In 2021 I joined a <strong>fiber optic cable manufacturer</strong>, and I've been running its IT ever since — a head office and two plants, where a network outage stops production.</p>
-      <p>Keeping the lights on is half the job. The half I enjoy most starts with a simple question: <em>"why is this still done by hand?"</em> Paper handover forms, machines checked by walking the floor, outages discovered by users — each one became a tool I built, from requirements to user training and go-live.</p>
+      <p>Since 2021 I've been the IT engineer at a <strong>fiber optic cable manufacturer</strong> with a head office in Jakarta and two plants in Cilegon. Most days are hands-on support: users, laptops and printers, access points and ISP links, firewalls and antivirus, servers, Microsoft 365 and the company website.</p>
+      <p>Alongside support, I build small systems on the <strong>Microsoft Power Platform</strong> — an asset handover (BAST) app, an inventory app, IT ticketing and contract reminders. Each one starts with a functional document and ends with key-user training and go-live support. The same approach went into monitoring: machines, internet links, servers and VPN now show up on a dashboard, so problems are seen before someone has to call IT.</p>
       <dl class="skills">
         <dt>Infrastructure</dt><dd>Windows Server, Active Directory and Hyper-V for a 3-site company; backup and DR for the ERP.</dd>
         <dt>Network & security</dt><dd>Palo Alto NGFW with SD-WAN and VPN, MikroTik at branches, UniFi Wi-Fi, endpoint protection for ~160 devices.</dd>
@@ -93,16 +93,20 @@
       </article>
 
       <article class="case">
-        <button class="case-shot" data-full="img/isp-dashboard.jpg" data-cap="Multi-site ISP monitoring — live bandwidth and link status per site (ISP names redacted)"><img src="img/isp-dashboard.jpg" alt="Grafana dashboard showing ISP link status and bandwidth for three sites" loading="lazy" width="1600" height="640"></button>
+        <div class="case-shots">
+          <button class="case-shot" data-full="img/isp-dashboard-v2.jpg" data-cap="Network — ISP links per site: online count, total bandwidth, latency, packet loss and link-status history (site and ISP names anonymized)"><img src="img/isp-dashboard-v2.jpg" alt="Dark Grafana dashboard with ISP status tiles, link history timeline and per-ISP bandwidth" loading="lazy" width="1352" height="342"></button>
+          <button class="case-thumb" data-full="img/server-dashboard.jpg" data-cap="Servers — active problems and CPU / memory for every physical host and VM (host names anonymized)"><img src="img/server-dashboard.jpg" alt="Grafana server dashboard with active problems table and CPU and memory bars per host and VM" loading="lazy" width="1352" height="500"><span>Servers & VMs</span></button>
+          <button class="case-thumb" data-full="img/vpn-dashboard.jpg" data-cap="VPN — who is connected now, failed logins per site and recent login activity (users, devices and IPs masked)"><img src="img/vpn-dashboard.jpg" alt="Grafana VPN dashboard with online users, failed login trend and login activity tables" loading="lazy" width="1352" height="542"><span>VPN morning check</span></button>
+        </div>
         <p class="case-kicker">02 · Monitoring · NOC</p>
-        <h3>Multi-Site ISP & Server Monitoring</h3>
+        <h3>Network, Server & VPN Monitoring</h3>
         <p class="my-role"><b>My role:</b> designed and set up the monitoring server, dashboards and alert rules end to end.</p>
         <div class="case-grid">
-          <div><h4>Context</h4><p>When the internet went down at a plant, IT usually heard it from users first. Nobody could say which ISP failed, when, or for how long — so SLA claims with providers were guesswork.</p></div>
-          <div><h4>What I built</h4><p>A central NOC on Zabbix + Grafana: live bandwidth and up/down status for every ISP link at every site, plus Hyper-V hosts, VMs, firewalls and routers. Alerts go to separate Server and Network Telegram channels with severity filters, and the team gets a read-only dashboard.</p></div>
-          <div><h4>Outcome</h4><p>Outages are known <strong>before users call</strong>, every down/recovery is timestamped for provider follow-up, and alert noise dropped once channels and filters were split.</p></div>
+          <div><h4>Context</h4><p>When the internet went down at a plant, IT usually heard it from users first. Nobody could say which ISP failed, when, or for how long. Servers and VPN logins had the same problem: you only looked when something was already wrong.</p></div>
+          <div><h4>What I built</h4><p>A central NOC on Zabbix + Grafana with three views. <b>Network:</b> bandwidth, latency and up/down history for every ISP link at every site. <b>Servers:</b> active problems plus CPU, memory and disk for each Hyper-V host and VM. <b>VPN:</b> a morning check of who is connected, failed logins per site and logins from abroad, fed by firewall syslog and API. Alerts go to separate Network and Server Telegram groups.</p></div>
+          <div><h4>Outcome</h4><p>Outages are known <strong>before users call</strong>, every down/recovery is timestamped for provider follow-up, and the morning check covers network, servers and remote access on one screen in a few minutes.</p></div>
         </div>
-        <p class="stack"><span>Zabbix 7</span><span>Grafana</span><span>SNMP</span><span>Telegram</span><span>Linux</span></p>
+        <p class="stack"><span>Zabbix 7</span><span>Grafana</span><span>SNMP</span><span>Syslog</span><span>Palo Alto API</span><span>Telegram</span></p>
       </article>
 
       <article class="case">
@@ -119,7 +123,19 @@
       </article>
 
       <article class="case">
-        <p class="case-kicker">04 · Backup & Disaster Recovery</p>
+        <p class="case-kicker">04 · Power Automate · Microsoft 365</p>
+        <h3>IT Ticketing & Contract Reminder</h3>
+        <p class="my-role"><b>My role:</b> designed the request form and both flows, set up the Planner board, and rolled it out to every department.</p>
+        <div class="case-grid">
+          <div><h4>Context</h4><p>IT requests came in by chat, phone and walk-ins across three sites. Requests got missed, nobody could tell what was still open, and departments never heard back when a job was finished. Vendor contracts had the same issue — renewals were noticed late.</p></div>
+          <div><h4>What I built</h4><p>One Microsoft Forms page for every site and department, no login needed. A Power Automate flow turns each submission into a numbered Planner task (IT-WO-####) and emails IT with the department's group in CC. When the task is marked done, a second flow tells the department who handled it, with the job photos attached. A separate flow sends reminders before vendor contracts expire.</p></div>
+          <div><h4>Outcome</h4><p><strong>350+ tickets</strong> logged so far, each with a number, an owner and timestamps. Departments are notified when a ticket opens and when it closes, without IT writing a single email by hand.</p></div>
+        </div>
+        <p class="stack"><span>Microsoft Forms</span><span>Power Automate</span><span>Planner</span><span>Outlook</span><span>SharePoint</span></p>
+      </article>
+
+      <article class="case">
+        <p class="case-kicker">05 · Backup & Disaster Recovery</p>
         <h3>On-Prem Backup & DR Platform</h3>
         <p class="my-role"><b>My role:</b> designed the backup architecture, built the server and automated the daily backup jobs.</p>
         <div class="case-grid">
@@ -130,17 +146,6 @@
         <p class="stack"><span>Garage S3</span><span>rclone</span><span>Ubuntu</span><span>SQL Server</span><span>Hyper-V</span></p>
       </article>
 
-      <article class="case">
-        <p class="case-kicker">05 · Web App · Microsoft 365</p>
-        <h3>QR Document Portal — AWS to SharePoint</h3>
-        <p class="my-role"><b>My role:</b> led the storage migration and brought the portal back online after the server move.</p>
-        <div class="case-grid">
-          <div><h4>Context</h4><p>Customers scan a QR code on the product to download its quality documents, which the QC team uploads as PDFs. Storage sat on AWS S3 — an extra bill and a place QC couldn't manage themselves. A hosting migration later took the portal offline.</p></div>
-          <div><h4>What I built</h4><p>Moved document storage to SharePoint on the existing Microsoft 365 license. After the move to a new cPanel VPS, fixed internal DNS, restored missing Composer dependencies and patched the legacy code for PHP 8.1.</p></div>
-          <div><h4>Outcome</h4><p>One less cloud bill, QC manages files in a tool they already use, and the portal is <strong>back online</strong> on the new server.</p></div>
-        </div>
-        <p class="stack"><span>Laravel</span><span>PHP 8.1</span><span>SharePoint</span><span>cPanel</span></p>
-      </article>
     </section>
 
     <!-- Experience -->
@@ -183,7 +188,7 @@
         <li><h3>Multi-ISP SD-WAN Migration</h3><p>Onboarded a new 100 Mbps primary ISP on a Palo Alto PA-440 and mapped every dependency (NAT, IPsec, VPN portal) before retiring the old one.</p><span class="tags">Palo Alto · SD-WAN · IPsec</span></li>
         <li><h3>UniFi Controller Migration</h3><p>Legacy v7.3 controller moved to a clean v10.6 install on Ubuntu — all 16 access points re-adopted with no site visit.</p><span class="tags">UniFi · Ubuntu · MongoDB</span></li>
         <li><h3>Social Media & Game Blocking</h3><p>Rebuilt a branch-site MikroTik policy that never matched: DNS sinkhole + TLS SNI + QUIC/DoH block, 250+ rules, WhatsApp untouched.</p><span class="tags">MikroTik RouterOS 7</span></li>
-        <li><h3>IT Ticketing & Contract Reminder</h3><p>Microsoft Forms to Planner tasks and email, with SLA escalation and automatic reminders before vendor contracts expire.</p><span class="tags">Power Automate · Planner</span></li>
+        <li><h3>QR Document Portal — AWS to SharePoint</h3><p>Customers scan a QR code to download product quality documents. Moved storage from AWS S3 to SharePoint (one less cloud bill, QC manages files themselves) and brought the portal back online after a VPS move — DNS, Composer and PHP 8.1 fixes.</p><span class="tags">Laravel · PHP 8.1 · SharePoint · cPanel</span></li>
         <li><h3>IT Inventory Management</h3><p>Multi-site stock and spare-part tracking app for the IT team.</p><span class="tags">Power Apps · SharePoint</span></li>
         <li><h3>UPS Power Monitoring</h3><p>Two-site UPS status page with hourly Telegram reports and alerts for power failure, low battery and room temperature.</p><span class="tags">NUT · Python Flask · Telegram</span></li>
         <li><h3>Endpoint Protection Fleet Upgrade</h3><p>Network Agent and endpoint security upgrades rolled out to ~160 devices, closing a published agent vulnerability.</p><span class="tags">Kaspersky KSC</span></li>
